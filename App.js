@@ -1,19 +1,21 @@
-import React from "react";
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Button, Text, View } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
-import { styles } from "./components/styles";
+import React from 'react';
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Button, Text, View, SafeAreaView } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { styles } from './components/styles';
 
 //screens
-import Login from "./screens/Login.js";
-import AppStack from "./routes/routes";
+import Login from './screens/Login.js';
+import AppStack from './routes/routes';
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <AppStack />
-      {/* <Login /> */}
-    </NavigationContainer>
+    <SafeAreaView>
+      <NavigationContainer>
+        <AppStack />
+        {/* <Login /> */}
+      </NavigationContainer>
+    </SafeAreaView>
   );
 }
 
