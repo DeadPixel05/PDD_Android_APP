@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useState } from "react";
+import React, { Component, useEffect, useState } from 'react';
 import {
   View,
   Text,
@@ -7,9 +7,8 @@ import {
   Image,
   Alert,
   TouchableOpacity,
-} from "react-native";
-import { styles } from "../components/styles";
-import AppStack from "./routes/routes";
+} from 'react-native';
+import { styles } from '../components/styles';
 
 // const Login = () => {
 //     return (
@@ -58,18 +57,18 @@ import AppStack from "./routes/routes";
 // }
 
 const Login = ({ navigation }) => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleLogin = () => {
     // useEffect(() => {
     // Make an API call to the PHP server to check the login credentials
-    fetch("http://192.168.102.245/android_test/test.php", {
-      method: "POST",
+    fetch('http://192.168.102.245/android_test/test.php', {
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
       },
       body: JSON.stringify({
         username,
@@ -80,7 +79,7 @@ const Login = ({ navigation }) => {
       .then((responseJson) => {
         const setData = JSON.parse(JSON.stringify(responseJson));
         if (setData.error == false) {
-          console.log("success");
+          console.log('success');
           setIsLoggedIn(true);
         } else {
           Alert.alert(setData.message);
@@ -89,7 +88,7 @@ const Login = ({ navigation }) => {
         }
       })
       .catch((error) => {
-        console.log("error");
+        console.log('error');
         console.error(error);
       });
     // }, []);
@@ -98,7 +97,7 @@ const Login = ({ navigation }) => {
     <View style={styles.container}>
       <Image
         style={styles.logo_image}
-        source={require("../assets/dpwh_logo.png")}
+        source={require('../assets/dpwh_logo.png')}
       />
       <Text style={styles.title_style}>PDD App</Text>
 
@@ -108,6 +107,7 @@ const Login = ({ navigation }) => {
         placeholder="Email"
         placeholderTextColor="#1c313a"
         keyboardType="email-address"
+        autoCapitalize="none"
         onChangeText={setUsername}
       />
       <TextInput
@@ -116,6 +116,7 @@ const Login = ({ navigation }) => {
         placeholder="Password"
         secureTextEntry={true}
         placeholderTextColor="#1c313a"
+        autoCapitalize="none"
         // ref={(input) => this.password = input}
 
         onChangeText={setPassword}
@@ -126,14 +127,14 @@ const Login = ({ navigation }) => {
         onPress={handleLogin}
       ></Button>
       {isLoggedIn ? (
-        navigation.navigate("Home", { paramUsername: username })
+        navigation.navigate('Home', { paramUsername: username })
       ) : (
         <View style={{ marginTop: 8 }}>
           <Text
             onPress={() =>
               Alert.alert(
-                (title = "Forgot Password?"),
-                (message = "Contact the administrator")
+                (title = 'Forgot Password?'),
+                (message = 'Contact the administrator')
               )
             }
           >

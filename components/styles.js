@@ -1,6 +1,6 @@
 // // import styled from 'styled-components';
-import React from "react";
-import { StyleSheet } from "react-native";
+import React from 'react';
+import { StyleSheet } from 'react-native';
 // import Constants from 'expo-constants';
 
 // //Colors
@@ -32,9 +32,9 @@ export const StyledContainer = StyleSheet.create({
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 
   logo_image: {
@@ -44,26 +44,26 @@ export const styles = StyleSheet.create({
 
   title_style: {
     fontSize: 30,
-    textAlign: "center",
-    fontWeight: "bold",
+    textAlign: 'center',
+    fontWeight: 'bold',
     // color: '#F6BA6F',
   },
 
   inputBox: {
     width: 380,
     height: 70,
-    backgroundColor: "white",
+    backgroundColor: 'white',
 
     paddingHorizontal: 16,
     fontSize: 22,
-    color: "#2f312c",
+    color: '#2f312c',
     marginVertical: 10,
   },
 
   buttonText: {
     fontSize: 22,
-    fontWeight: "500",
-    color: "#fff",
-    textAlign: "center",
+    fontWeight: '500',
+    color: '#fff',
+    textAlign: 'center',
   },
 });

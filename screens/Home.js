@@ -1,12 +1,21 @@
-import { styles } from "../components/styles";
-import { Text, View } from "react-native";
+import { styles } from '../components/styles';
+import { Button, NativeEventEmitter, Text, View } from 'react-native';
 
-const Home = ({ route }) => {
+function Home({ route, navigation }) {
   return (
     <View style={styles.container}>
       <Text>Home</Text>
-      <Text>{route.params.paramUsername}</Text>
+      <Text>Welcome, {route.params.paramUsername}</Text>
+      {/* <Button title="Logout" onPress={() => navigation.goBack()}></Button> */}
+      <Button
+        title="Settings"
+        onPress={() =>
+          navigation.navigate('Settings', {
+            paramUsername: route.params.paramUsername,
+          })
+        }
+      ></Button>
     </View>
   );
-};
+}
 export default Home;

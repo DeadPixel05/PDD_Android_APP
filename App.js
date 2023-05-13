@@ -10,12 +10,9 @@ import AppStack from './routes/routes';
 
 export default function App() {
   return (
-    <SafeAreaView>
-      <NavigationContainer>
-        <AppStack />
-        {/* <Login /> */}
-      </NavigationContainer>
-    </SafeAreaView>
+    <NavigationContainer>
+      <AppStack />
+    </NavigationContainer>
   );
 }
 
